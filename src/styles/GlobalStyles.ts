@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,200&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,200&display=swap');
   * {
     margin: 0;
     padding: 0;
@@ -24,4 +24,8 @@ export default createGlobalStyle`
     list-style: none;
   }
 
+  :root {
+    --color-primary: #ED1C24;
+    --color-secondary: #ffe7aa;
+  }
 `
