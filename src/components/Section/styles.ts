@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 import FireFlyLogo from '../FireFlyLogo';
+import FireFlyLogoPeq from '../FireFlyLogoPeq';
+
+import { RiMenu4Fill } from "react-icons/ri";
+import { AiOutlineClose } from "react-icons/ai"
 
 export const Container = styled.div`
   width: 100vw;
@@ -44,30 +48,103 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const Header = styled.header`
-
   z-index: 3;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 16px 32px;
+  padding: 16px;
   animation-duration: 2s;
 
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+
+  &:hover {
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  }
 `;
 
 export const Logo = styled(FireFlyLogo)`
   width: 100px;
   height: 50px;
   fill: var(--logo-color);
+  @media only screen and (max-width: 600px) {
+    & {
+     display: none;
+    }
+  }
 `;
 
+export const LogoPequena = styled(FireFlyLogoPeq)`
+  width: 100px;
+  height: 50px;
+  fill: var(--logo-color);
+  @media only screen and (min-width: 600px) {
+    & {
+     display: none;
+    }
+  }
+`;
+
+export const Menu = styled(RiMenu4Fill)`
+  width: 30px;
+  height: 30px;
+  fill: var(--logo-color);
+  cursor: pointer;
+`
+
+export const MenuContent = styled.div<{ show: boolean }>`
+  display: ${props => props.show ? 'block' : 'none' };
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.9);
+  z-index: 5;
+  &:before,&:after{
+    content: '';
+    position: fixed;
+  }
+
+  header {
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  ul {
+    padding: 0 50px;
+  }
+
+  ul > li {
+    font-size: 22px;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 0.5px solid rgba(255,255,255, 0.2);
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+`;
+
+export const Close = styled(AiOutlineClose)`
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+  z-index:10;
+  cursor: pointer;
+`
+
 export const Content = styled.div`
+  scroll: none;
   z-index: 2;
-  position: relative;
+  position: absolute;
   max-width: 1440px;
   margin: 0 auto;
   padding: var(--padding-top) 32px var(--padding-bottom);
