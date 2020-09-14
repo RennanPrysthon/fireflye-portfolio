@@ -6,14 +6,14 @@ function App() {
   return (
     <>
       <Section
-        variant="red"
-      >
-      </Section>
-      <Section
         variant="transparent"
       ></Section>
       <Section
         variant="white"
+      >
+      </Section>
+      <Section
+        variant="red"
       >
       </Section>
       <GlobalStyles />

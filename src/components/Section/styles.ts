@@ -6,9 +6,7 @@ import FireFlyLogoPeq from '../FireFlyLogoPeq';
 import { RiMenu4Fill } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai"
 
-export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+export const Container = styled.div<{img?: string}>`
   --padding-top: 100px;
   --padding-bottom: 120px;
   --heading-font-size: 32px;
@@ -22,8 +20,17 @@ export const Container = styled.div`
     --logo-color: var(--color-blue);
   }
   &.transparent {
-    --bg-color: url(${require('../../assets/cover.jpg')});
-    --logo-color: #FFF;
+    --bg-color: none;
+    --logo-color: var(--color-primary);
+    background-image: url(${props => props.img});
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   &:first-child {
     --padding-top: 130px;
@@ -33,6 +40,11 @@ export const Container = styled.div`
       --content-width: 50%;
     }
   }
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position:center;
+  background-repeat: no-repeat;
   background: var(--bg-color);
   position: relative;
 `;

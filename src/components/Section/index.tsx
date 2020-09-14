@@ -1,5 +1,7 @@
 import React, { useState, useMemo } from 'react';
 
+import cover from '../../assets/cover.png'
+
 import {
   Container,
   HeaderWrapper,
@@ -14,6 +16,7 @@ import {
 
 interface Props {
   variant: 'red' | 'white' | 'transparent';
+  img?: string;
 }
 
 interface MenuProps {
@@ -22,7 +25,7 @@ interface MenuProps {
   link: string;
 }
 
-const Section: React.FC<Props> = ({ variant, children}) => {
+const Section: React.FC<Props> = ({ variant, img = cover, children }) => {
   const [menu, setMenu] = useState(false)
   const toggleMenu = () => setMenu(state => !state)
 
@@ -33,7 +36,7 @@ const Section: React.FC<Props> = ({ variant, children}) => {
       link: '/'
     },
     {
-      number: 1,
+      number: 2,
       name: 'Contato',
       link: '/'
     }
@@ -53,7 +56,10 @@ const Section: React.FC<Props> = ({ variant, children}) => {
           ))}
         </ul>
       </MenuContent>
-      <Container className={variant}>
+      <Container
+        className={variant}
+        img={img}
+      >
         <HeaderWrapper>
           <Header>
             <h1>
