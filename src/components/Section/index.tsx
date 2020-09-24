@@ -14,6 +14,11 @@ import {
   MenuContent
 } from './styles';
 
+const variants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: "-100%" }
+}
+
 interface Props {
   variant: 'red' | 'white' | 'transparent';
   img?: string;
@@ -44,7 +49,10 @@ const Section: React.FC<Props> = ({ variant, img = cover, children }) => {
 
   return (
     <>
-      <MenuContent show={menu}>
+      <MenuContent
+        animate={menu ? "open" : "closed"}
+        variants={variants}
+      >
         <header>
           <Close onClick={toggleMenu}/>
         </header>
@@ -55,7 +63,7 @@ const Section: React.FC<Props> = ({ variant, img = cover, children }) => {
             </li>
           ))}
         </ul>
-      </MenuContent>
+        </MenuContent>
       <Container
         className={variant}
         img={img}

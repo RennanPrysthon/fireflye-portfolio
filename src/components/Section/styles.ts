@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { motion } from 'framer-motion';
+
 import FireFlyLogo from '../FireFlyLogo';
 import FireFlyLogoPeq from '../FireFlyLogoPeq';
 
@@ -73,10 +75,6 @@ export const Header = styled.header`
   top: 0;
   left: 0;
   right: 0;
-
-  &:hover {
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-  }
 `;
 
 export const Logo = styled(FireFlyLogo)`
@@ -106,17 +104,23 @@ export const Menu = styled(RiMenu4Fill)`
   height: 30px;
   fill: var(--logo-color);
   cursor: pointer;
-`
+  outline: none;
+  -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+`;
 
-export const MenuContent = styled.div<{ show: boolean }>`
-  display: ${props => props.show ? 'block' : 'none' };
+export const MenuContent = styled(motion.div)`
+  opacity: 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.9);
-  z-index: 5;
+  z-index: 10;
   &:before,&:after{
     content: '';
     position: fixed;

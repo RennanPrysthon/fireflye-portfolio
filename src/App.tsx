@@ -1,6 +1,8 @@
 import React from 'react';
 import GlobalStyles from './styles/GlobalStyles';
+
 import Section from './components/Section';
+import Projects from './components/Projects';
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <Section
         variant="white"
       >
+        <Projects />
       </Section>
       <Section
         variant="red"
