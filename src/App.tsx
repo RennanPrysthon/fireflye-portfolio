@@ -2,23 +2,22 @@ import React from 'react';
 import GlobalStyles from './styles/GlobalStyles';
 
 import Section from './components/Section';
-import Projects from './components/Projects';
+import Greetings from './components/Greetings';
 
 function App() {
   return (
     <>
       <Section
         variant="transparent"
-      ></Section>
+      >
+        <Greetings />
+      </Section>
       <Section
         variant="white"
-      >
-        <Projects />
-      </Section>
+      />
       <Section
         variant="red"
-      >
-      </Section>
+      />
       <GlobalStyles />
     </>
   );
