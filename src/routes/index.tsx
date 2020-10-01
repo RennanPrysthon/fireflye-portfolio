@@ -7,7 +7,8 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import Home from '../components/Home';
+import Home from '../pages/Home';
+import ProjectViewer from '../pages/ProjectViewer';
 
 export default function Routes() {
   return (
@@ -18,6 +19,9 @@ export default function Routes() {
         </Route>
         <Route path="/contact">
           <h1>Contato</h1>
+        </Route>
+        <Route path="/project/:id">
+          <ProjectViewer />
         </Route>
         <Route path="*">
           <Redirect to="/" />

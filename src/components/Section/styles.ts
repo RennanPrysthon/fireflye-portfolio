@@ -159,10 +159,15 @@ export const Close = styled(AiOutlineClose)`
 `;
 
 export const Content = styled.div`
-  scroll: none;
   z-index: 2;
   position: absolute;
   max-width: 1440px;
   margin: 0 auto;
   padding: var(--padding-top) 32px var(--padding-bottom);
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

@@ -16,12 +16,22 @@ export default createGlobalStyle`
   body {
     font: 14px 'Josefin Sans', sans-serif;
     background:#f9f9f9;
-    color: #333;
+    color: var(--dark-font);
     -webkit-font-smoothing: antialiased !important;
   }
 
   ol, ul {
     list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--dark-font)
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
   }
 
   :root {
@@ -30,10 +40,5 @@ export default createGlobalStyle`
 
     --dark-font: #222;
     --light-font: #eee;
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--dark-font)
   }
 `;

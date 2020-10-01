@@ -20,17 +20,6 @@ const variants = {
   closed: { opacity: 0, x: '-100%' },
 };
 
-interface Props {
-  variant: 'red' | 'white' | 'transparent';
-  img?: string;
-}
-
-interface MenuProps {
-  number: number;
-  name: string;
-  link: string;
-}
-
 const Section: React.FC<Props> = ({ variant, img = cover, children }) => {
   const [menu, setMenu] = useState(false);
   const toggleMenu = () => setMenu((state) => !state);
