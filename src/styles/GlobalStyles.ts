@@ -27,5 +27,13 @@ export default createGlobalStyle`
   :root {
     --color-primary: #ED1C24;
     --color-secondary: #ffe7aa;
+
+    --dark-font: #222;
+    --light-font: #eee;
   }
-`
+
+  a {
+    text-decoration: none;
+    color: var(--dark-font)
+  }
+`;

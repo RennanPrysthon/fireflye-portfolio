@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 import { motion } from 'framer-motion';
 
+import { RiMenu4Fill } from 'react-icons/ri';
+import { AiOutlineClose } from 'react-icons/ai';
 import FireFlyLogo from '../FireFlyLogo';
 import FireFlyLogoPeq from '../FireFlyLogoPeq';
-
-import { RiMenu4Fill } from "react-icons/ri";
-import { AiOutlineClose } from "react-icons/ai"
 
 export const Container = styled.div<{img?: string}>`
   --padding-top: 100px;
@@ -24,12 +23,10 @@ export const Container = styled.div<{img?: string}>`
   &.transparent {
     --bg-color: none;
     --logo-color: var(--color-primary);
-    background-image: url(${props => props.img});
+    background-image: url(${(props) => props.img});
 
-    /* Full height */
     height: 100%;
 
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,6 +39,7 @@ export const Container = styled.div<{img?: string}>`
       --content-width: 50%;
     }
   }
+
   height: 100vh;
   width: 100%;
   background-size: cover;
@@ -140,12 +138,15 @@ export const MenuContent = styled(motion.div)`
   ul > li {
     font-size: 22px;
     width: 100%;
-    color: #fff;
     text-align: center;
     padding: 5px;
     border-bottom: 0.5px solid rgba(255,255,255, 0.2);
     cursor: pointer;
     margin-bottom: 10px;
+  }
+
+  ul > li > a {
+    color: var(--light-font)
   }
 `;
 
@@ -155,7 +156,7 @@ export const Close = styled(AiOutlineClose)`
   fill: #fff;
   z-index:10;
   cursor: pointer;
-`
+`;
 
 export const Content = styled.div`
   scroll: none;

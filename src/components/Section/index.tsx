@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
-import cover from '../../assets/cover.png'
+import cover from '../../assets/cover.png';
 
 import {
   Container,
@@ -11,13 +12,13 @@ import {
   Menu,
   Close,
   Content,
-  MenuContent
+  MenuContent,
 } from './styles';
 
 const variants = {
   open: { opacity: 1, x: 0 },
-  closed: { opacity: 0, x: "-100%" }
-}
+  closed: { opacity: 0, x: '-100%' },
+};
 
 interface Props {
   variant: 'red' | 'white' | 'transparent';
@@ -31,39 +32,39 @@ interface MenuProps {
 }
 
 const Section: React.FC<Props> = ({ variant, img = cover, children }) => {
-  const [menu, setMenu] = useState(false)
-  const toggleMenu = () => setMenu(state => !state)
+  const [menu, setMenu] = useState(false);
+  const toggleMenu = () => setMenu((state) => !state);
 
   const links: MenuProps[] = useMemo(() => [
     {
       number: 1,
       name: 'Home',
-      link: '/'
+      link: '/',
     },
     {
       number: 2,
       name: 'Contato',
-      link: '/'
-    }
-  ], [])
+      link: '/contact',
+    },
+  ], []);
 
   return (
     <>
       <MenuContent
-        animate={menu ? "open" : "closed"}
+        animate={menu ? 'open' : 'closed'}
         variants={variants}
       >
         <header>
-          <Close onClick={toggleMenu}/>
+          <Close onClick={toggleMenu} />
         </header>
         <ul>
-          {links.map(item => (
+          {links.map((item) => (
             <li key={item.number}>
-              {item.name}
+              <Link to={item.link}>{item.name}</Link>
             </li>
           ))}
         </ul>
-        </MenuContent>
+      </MenuContent>
       <Container
         className={variant}
         img={img}
@@ -74,7 +75,7 @@ const Section: React.FC<Props> = ({ variant, img = cover, children }) => {
               <Logo />
               <LogoPequena />
             </h1>
-            <Menu onClick={toggleMenu}/>
+            <Menu onClick={toggleMenu} />
           </Header>
         </HeaderWrapper>
 
@@ -83,7 +84,7 @@ const Section: React.FC<Props> = ({ variant, img = cover, children }) => {
         </Content>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Section
+export default Section;
