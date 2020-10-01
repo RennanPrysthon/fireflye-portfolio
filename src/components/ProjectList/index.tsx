@@ -24,8 +24,8 @@ const ProjectList: React.FC = () => {
     <Container>
       <Wrapper>
         {data.map((item) => (
-          <Link to={`/project/${item.id}`}>
-            <Item key={item.id}>
+          <Link key={item.id} to={`/project/${item.id}`}>
+            <Item>
               <img src={item.img} alt="teste" />
               <span />
             </Item>

@@ -22,7 +22,7 @@ export const Container = styled.div<{img?: string}>`
   &.white {
     --bg-color: var(--color-tertiary);
     --logo-color: var(--color-blue);
-    --wrapper-height: 200vh;
+    --wrapper-height: 250vh;
     @media only screen and (min-width: 600px) {
       & {
         --wrapper-height: 100vh;
