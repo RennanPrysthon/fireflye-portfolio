@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { AnimatePresence } from 'framer-motion';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,20 +15,22 @@ import ProjectViewer from '../pages/ProjectViewer';
 export default function Routes() {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/contact">
-          <h1>Contato</h1>
-        </Route>
-        <Route path="/project/:id">
-          <ProjectViewer />
-        </Route>
-        <Route path="*">
-          <Redirect to="/" />
-        </Route>
-      </Switch>
+      <AnimatePresence>
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/contact">
+            <h1>Contato</h1>
+          </Route>
+          <Route path="/project/:id">
+            <ProjectViewer />
+          </Route>
+          <Route path="*">
+            <Redirect to="/" />
+          </Route>
+        </Switch>
+      </AnimatePresence>
     </Router>
   );
 }
