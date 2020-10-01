@@ -4,7 +4,7 @@ import {
   Link,
 } from 'react-router-dom';
 
-import { Container, Item } from './styles';
+import { Container, Wrapper, Item } from './styles';
 
 import projects from '../../services/data';
 
@@ -22,14 +22,16 @@ const ProjectList: React.FC = () => {
 
   return (
     <Container>
-      {data.map((item) => (
-        <Link to={`/project/${item.id}`}>
-          <Item key={item.id}>
-            <img src={item.img} alt="teste" />
-            <span />
-          </Item>
-        </Link>
-      ))}
+      <Wrapper>
+        {data.map((item) => (
+          <Link to={`/project/${item.id}`}>
+            <Item key={item.id}>
+              <img src={item.img} alt="teste" />
+              <span />
+            </Item>
+          </Link>
+        ))}
+      </Wrapper>
     </Container>
   );
 };

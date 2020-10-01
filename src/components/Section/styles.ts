@@ -12,14 +12,24 @@ export const Container = styled.div<{img?: string}>`
   --padding-bottom: 120px;
   --heading-font-size: 32px;
   --content-width: 100%;
+  --wrapper-height: 100vh;
+
   &.red {
     --bg-color: var(--color-secondary);
     --logo-color: var(--color-primary);
   }
+
   &.white {
     --bg-color: var(--color-tertiary);
     --logo-color: var(--color-blue);
+    --wrapper-height: 200vh;
+    @media only screen and (min-width: 600px) {
+      & {
+        --wrapper-height: 100vh;
+      }
+    }
   }
+
   &.transparent {
     --bg-color: none;
     --logo-color: var(--color-primary);
@@ -31,6 +41,7 @@ export const Container = styled.div<{img?: string}>`
     background-repeat: no-repeat;
     background-size: cover;
   }
+
   &:first-child {
     --padding-top: 130px;
     --heading-font-size: 51px;
@@ -40,7 +51,7 @@ export const Container = styled.div<{img?: string}>`
     }
   }
 
-  height: 100vh;
+  min-height: var(--wrapper-height);
   width: 100%;
   background-size: cover;
   background-position:center;
@@ -161,12 +172,9 @@ export const Close = styled(AiOutlineClose)`
 export const Content = styled.div`
   z-index: 2;
   position: absolute;
-  max-width: 1440px;
-  margin: 0 auto;
   padding: var(--padding-top) 32px var(--padding-bottom);
   width: 100%;
   height: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,10 +1,24 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1f2;
+  width: 70%;
+
+  @media only screen and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr)
+  }
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr)
+  }
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr)
+  }
 `;
 
 export const Item = styled.div`
@@ -13,7 +27,6 @@ export const Item = styled.div`
 
   > img {
     display: block;
-    width: 100%;
   }
 
   > span:hover {
@@ -26,10 +39,8 @@ export const Item = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
-    width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.7)
   }
 `;
